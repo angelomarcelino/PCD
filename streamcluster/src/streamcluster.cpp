@@ -202,7 +202,7 @@ public:
 
     for( int i = k1; i < k2; i++ ) {
       if( is_center[i] ) {
-	center_table[i] = count++;
+	    center_table[i] = count++;
       }
     }
 

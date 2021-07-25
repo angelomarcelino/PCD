@@ -16,8 +16,9 @@ ifdef version
   endif
 endif
 
+
 all: $(OBJS)
-	$(CXX) -pg $(CXXFLAGS) $(LDFLAGS) $(OBJS) $(LIBS) -o $(TARGET)
+	$(CXX) -pg -O2 -ftree-vectorize -fopt-info-vec-optimize -fopt-info-vec-missed -fopt-info-vec-note -ftree-vectorizer-verbose=2 -fdump-tree-vect $(CXXFLAGS) $(LDFLAGS) $(OBJS) $(LIBS) -o $(TARGET)
 
 %.o : %.cpp
 	$(CXX) $(CXXFLAGS) -c $<
