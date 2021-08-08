@@ -1,0 +1,10 @@
+PARSEC Benchmark Suite Version 3.0-beta-20150206
+read 200000 points
+read 200000 points
+read 200000 points
+read 200000 points
+read 200000 points
+
+real	5m58,791s
+user	5m57,301s
+sys	0m0,320s
