@@ -1252,7 +1252,7 @@ int selectfeasible_fast(Points* points, int** feasible, int kmin, int pid, pthre
 	return numfeasible;
 }
 
-#ifdef TBB_VERSION
+#ifdef TBB_VERSION // implementation of pkmedian for TBB
 /* compute approximate kmedian on the points */
 float pkmedian(Points *points, long kmin, long kmax, long *kfinal,
 			   int pid, pthread_barrier_t *barrier) {

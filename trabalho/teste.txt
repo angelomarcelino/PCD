@@ -1,0 +1,5 @@
+
+omp_get_wtime em cada for do pgain
+
+
+com pthreads threads comeca com localSearch, com openmp comeca com #pragma
