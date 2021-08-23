@@ -266,6 +266,7 @@ double pgain(long x, Points* points, double z, long int* numcenters) {
 	double initime = omp_get_wtime();
 
 	float* x_cost_arr = (float*)malloc(points->num * sizeof(float));
+
 #pragma omp parallel num_threads(4)
 #pragma omp for
 	for (i = 0; i < points->num; i++) {
