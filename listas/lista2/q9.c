@@ -20,8 +20,8 @@ void Read_vector(double local_arr[], int local_n, int n,
 		arr = malloc(n * sizeof(double));
 		printf("Generating the vector %s\n", vec_name);
 		for (int i = 0; i < n; i++) {
-			arr[i] = randfrom(0.0, 1.0);
-			//arr[i] = 1.0;
+			//arr[i] = randfrom(0.0, 1.0);
+			arr[i] = i + 1.0;
 			//printf("%.2f ", arr[i]);
 		}
 		//printf("\n");
