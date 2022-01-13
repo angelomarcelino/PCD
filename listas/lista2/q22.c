@@ -58,8 +58,6 @@ int main(int argc, char **argv) {
 	}
 	local_intg = h * local_intg;
 
-	MPI_Reduce(&local_intg, &total_intg, 1, MPI_DOUBLE, MPI_SUM, 0,
-			   comm);
 
 	//Timing Ends
 	local_finish = MPI_Wtime();
@@ -92,7 +90,18 @@ int main(int argc, char **argv) {
 		median = local_elapsed;
 	}
 
-	
+	MPI_Reduce(&local_intg, &total_intg, 1, MPI_DOUBLE, MPI_SUM, 0,
+			   comm);
+
+	double mult = 1000000.0;
+	if (my_rank == 0) {
+		for (int i = 0; i < comm_sz; i++)
+        {
+			//printf("%.2f ", times[i] * mult);
+		}
+
+		printf("%.2f %.2f %.2f %.2f\n", max * mult, min * mult, mean * mult, median * mult);
+	}
 
 	MPI_Finalize();
 	return 0;
